@@ -1,7 +1,7 @@
 from Zaid.Cache.admins import admins
 from Zaid.main import call_py
-from pyrogram import filters
-from Zaid.main import bot as Client
+from pyrogram import filters, Client
+
 from Zaid.decorators import authorized_users_only
 from Zaid.filters import command, other_filters
 from Zaid.queues import QUEUE, clear_queue
