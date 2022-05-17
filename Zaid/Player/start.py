@@ -58,7 +58,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", callback_data="admins"),
+                InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", url="https://telegra.ph/𝗕ooo--‌ᴀꜰᴋ-ᴏꜰꜰʟɪɴᴇ-05-17-2"),
                 InlineKeyboardButton("🗨️ Uꜱᴇʀꜱ", callback_data="users"),
             ],
             [
@@ -206,7 +206,7 @@ async def help(client: Client, message: Message):
     self.username = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", callback_data="admins"),
+                InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", url="https://telegra.ph/𝗕ooo--‌ᴀꜰᴋ-ᴏꜰꜰʟɪɴᴇ-05-17-2"),
                 InlineKeyboardButton("🗨️ Uꜱᴇʀꜱ", callback_data="users"),
             ],
             [
