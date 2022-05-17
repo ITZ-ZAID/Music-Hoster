@@ -60,7 +60,7 @@ async def genStr(bot: users, msg: Message):
             break
     try:
         Zaid = await bot.send_message(chat.id, f"Booting Your Client")
-        client = Client(":memory:", API_ID, API_HASH, bot_token=BOT_TOKEN, plugins={"root": "Zaid.Player"})
+        client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
         await bot.send_message(chat.id, f"Your Client Has Been Successfully Started! ✅")
