@@ -86,7 +86,7 @@ async def vplay(c: Client, m: Message):
         await m.reply_text(
         "💡 To use me, Give me the following permission below:"
         + "\n\n» ❌ __Add users__\n\nOnce done, try again.")
-        return
+        pass
     try:
         ubot = (await user.get_me()).id
         b = await c.get_chat_member(chat_id, ubot) 
