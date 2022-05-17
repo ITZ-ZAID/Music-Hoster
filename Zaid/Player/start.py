@@ -1,30 +1,54 @@
 import asyncio
-from config import Config
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import MessageNotModified
 
-CHAT_ID = Config.CHAT_ID
-USERNAME = Config.BOT_USERNAME
-HOME_TEXT = "👋🏻 **Hi Dude [{}](tg://user?id={})** \n\n🤖 Im **Video Chat Bot**. \n**I Can Stream Lives, Radios, YouTube Videos & Telegram Video Files On Voice Chat Of Telegram Channels & Groups**"
+
+HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 Im **Zaid Vc Player**. \n**I Can Stream Lives, Radios, Raid, Vc Raid, YouTube Videos & Telegram Video Files On Voice Chat Of Telegram Groups**"
 HELP_TEXT = """
-🏷️ **Setting Up** :
+🏷️ **Setup Guide** :
 
-\u2022 Start a voice chat in your channel or group.
+\u2022 Start a voice chat in your group.
 \u2022 Add bot and user account in chat with admin rights.
-\u2022 Use /stream YouTube link or /stream live stream link or /stream as a reply to an video file.
+\u2022 Done Setup Process Read Commands Below 👇.
+"""
 
-🏷️ **Common Commands** :
+ADMIN_TEXT = """
+🏷️ **Admins Commands** :
 
-\u2022 `/start` - start the bot
-\u2022 `/help` - show help message
+\u2022 /userbotjoin To Invite Assistant To Your Chat.
+\u2022 /end To End Streaming.
+\u2022 /pause To Pause Stream.
+\u2022 /resume To Resume Stream.
+\u2022 /volume To Set Volume.
+\u2022 /skip To Skip Tracks.
+"""
 
-🏷️ **Admin Only Commands** :
+USER_TEXT = """
+🏷️ **Users Commands** :
 
-\u2022 `/radio` - start streaming the radio
-\u2022 `/stream` - start streaming the video
-\u2022 `/nstream` - stop streaming the video
+\u2022 /play <Query> To Play a Song.
+\u2022 /vplay <Query> To Play Video.
+\u2022 /stream <Live Url> To Play Live Streams 👇.
+"""
+
+SPAM_TEXT = """
+🏷️ **Spam Help @adminsOnly** :
+
+\u2022 /spam <Count> Text To Spam Your Message.
+\u2022 /fspam <Count> " " " ".
+\u2022 /delayspam <Count> " " " ".
+"""
+
+RAID_TEXT = """
+🏷️ **Raid Commands @SudoOnly** :
+
+\u2022 /vcraid <chatid> - Give a Chat Id Else Username To Voice Raid.
+\u2022 /vraid <chatid + Reply To Video File> - To Raid Video.
+\u2022 /raidpause - To Pause Raid.
+\u2022 /raidresume To Resume Raid.
+\u2022 /raidend <chatid> To End Audio/Video Raid.
 """
 
 @Client.on_callback_query()
@@ -81,6 +105,70 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
+    elif query.data=="users":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                USER_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="admins":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                ADMIN_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="raid":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                RAID_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="spam":
+        buttons = [
+            [
+                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="help"),
+                InlineKeyboardButton("🤷 Cʟᴏꜱᴇ", callback_data="close"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        try:
+            await query.edit_message_text(
+                SPAM_TEXT.format(query.from_user.first_name, query.from_user.id),
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
     elif query.data=="close":
         try:
             await query.message.delete()
@@ -109,7 +197,7 @@ async def start(client, message):
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_text(text=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
 
-@Client.on_message(filters.command(["help", f"help@{USERNAME}"]) & filters.private)
+@Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
     buttons = [
             [
