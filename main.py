@@ -2,15 +2,6 @@ import asyncio
 from pytgcalls import idle
 from Zaid.main import call_py, bot
 
-async def start_bot():
-    print("[INFO]: STARTING BOT CLIENT")
-    await bot.start()
-    print("[INFO]: STARTING PYTGCALLSS CLIENT")
-    await call_py.start()
-    await idle()
-    print("[INFO]: STOPPING BOT & USERBOT")
-    await bot.stop()
-
 
 import asyncio
 import os
@@ -78,6 +69,10 @@ async def genStr(bot: users, msg: Message):
         pass
 
 users.run()
+bot.start()
+call_py.start()
+await idle()
+bot.stop()
 
 
 loop = asyncio.get_event_loop()
