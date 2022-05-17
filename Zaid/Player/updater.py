@@ -10,7 +10,7 @@ from git.exc import InvalidGitRepositoryError
 
 from pyrogram.types import Message
 from pyrogram import filters
-from Zaid.main import bot as Client
+from pyrogram import Client
 
 from config import UPSTREAM_REPO, BOT_USERNAME
 
