@@ -16,8 +16,6 @@ bot = Client(
     plugins={"root": "Zaid.Player"},
 )
 
-BOT = TelegramClient('BOT', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
-
 user = Client(
     SESSION_NAME,
     api_id=API_ID,
