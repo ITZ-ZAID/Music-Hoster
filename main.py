@@ -68,12 +68,18 @@ async def genStr(bot: users, msg: Message):
         await bot.send_message(chat.id ,f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
         pass
 
-users.run()
-bot.start()
-call_py.start()
-idle()
-bot.stop()
+
+async def start_bot():
+    print("[INFO]: STARTING BOT CLIENT")
+    await bot.start()
+    print("[INFO]: STARTING PYTGCALLSS CLIENT")
+    await call_py.start()
+    await idle()
+    print("[INFO]: STOPPING BOT & USERBOT")
+    await users.run()
+    print("[INFO]: Starting Cloner")
+    await bot.stop()
 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete()
+loop.run_until_complete(start_bot())
