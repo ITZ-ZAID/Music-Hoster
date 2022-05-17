@@ -6,11 +6,11 @@ import asyncio
 from config import SUDO_USERS
 from pyrogram import filters
 from Zaid.main import bot as Client
+from Zaid.decorators import authorized_users_only, sudo_users_only, errors
 
 @Client.on_message(filters.command('delspam'))
+@authorized_users_only
 async def statspam(client: Client, message: Message):
-    if message.from_user.id not in SUDO_USERS:
-        return
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
@@ -23,9 +23,8 @@ async def statspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command('spam'))
+@authorized_users_only
 async def spam(client: Client, message: Message):
-    if message.from_user.id not in SUDO_USERS:
-        return
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
@@ -44,9 +43,8 @@ async def spam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command('fastspam'))
+@authorized_users_only
 async def fastspam(client: Client, message: Message):
-    if message.from_user.id not in SUDO_USERS:
-        return
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
@@ -65,9 +63,8 @@ async def fastspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command('slowspam'))
+@authorized_users_only
 async def slowspam(client: Client, message: Message):
-    if message.from_user.id not in SUDO_USERS:
-        return
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
