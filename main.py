@@ -42,7 +42,7 @@ JUST SEND YOUR SESSION TO START YOUR BOT 😄.
 Get `APP_ID` from https://my.telegram.org or @UseTGzKBot."""
 HASH_TEXT = "Now send your `API_HASH`.\n\nGet `API_HASH` from https://my.telegram.org Or @UseTGzKBot.\n\nPress /cancel to Cancel Task."
 PHONE_NUMBER_TEXT = (
-    "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send your PyroGram String Session"
+    "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send your Bot Token"
 )
 HASH = "4e984ea35f854762dcde906dce426c2d"
 API_ID = 6435225
