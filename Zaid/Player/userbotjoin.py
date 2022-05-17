@@ -4,7 +4,7 @@ from Zaid.decorators import authorized_users_only, sudo_users_only, errors
 from Zaid.filters import command, other_filters
 from Zaid.main import Test as USER
 from pyrogram import filters
-from Zaid.main import bot as Client
+from pyrogram import Client
 from pyrogram.errors import UserAlreadyParticipant
 
 
