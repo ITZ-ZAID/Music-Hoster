@@ -66,7 +66,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("🗨️ Sᴘᴀᴍ", callback_data="spam"),
             ],
             [
-                InlineKeyboardButton("🤖 Cʟᴏɴᴇʀ", url="t.me/ZaidVcBot"),
+                InlineKeyboardButton("🤖 Cʟᴏɴᴇʀ", url="t.me/ZaidClonerBot"),
             ],
             [
                 InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="home"),
@@ -91,7 +91,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Superior_Support"),
-                InlineKeyboardButton("🏷️ Oꜰꜰɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ", url="https://t.me/Superior_bots"),
+                InlineKeyboardButton("🏷️ Cʜᴀɴɴᴇʟ", url="https://t.me/Superior_bots"),
             ],
             [
                 InlineKeyboardButton("🤖 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/Itz-Zaid/Zaid-Vc-Player"),
@@ -214,7 +214,7 @@ async def help(client: Client, message: Message):
                 InlineKeyboardButton("🗨️ Sᴘᴀᴍ", callback_data="spam"),
             ],
             [
-                InlineKeyboardButton("🤖 Cʟᴏɴᴇʀ", url="t.me/ZaidVcBot"),
+                InlineKeyboardButton("🤖 Cʟᴏɴᴇʀ", url="t.me/ZaidClonerBot"),
             ],
             [
                 InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="home"),
