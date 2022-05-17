@@ -179,9 +179,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client, message):
+    get_me = await client.get_me()
+    USERNAME = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("🧐 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ", url=''),
+                InlineKeyboardButton("🧐 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ", url=f't.me/USERNAME'),
             ],
             [
                 InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Superior_Support"),
@@ -199,6 +201,8 @@ async def start(client, message):
 
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
+    get_me = await client.get_me()
+    self.username = get_me.username
     buttons = [
             [
                 InlineKeyboardButton("👮 Aᴅᴍɪɴꜱ", callback_data="admins"),
