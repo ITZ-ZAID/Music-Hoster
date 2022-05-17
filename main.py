@@ -76,7 +76,7 @@ async def start_bot():
     await call_py.start()
     await idle()
     print("[INFO]: STOPPING BOT & USERBOT")
-    await users.run()
+    await users.start()
     print("[INFO]: Starting Cloner")
     await bot.stop()
 
