@@ -37,7 +37,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 
 API_ID = 6435225
 API_HASH = "4e984ea35f854762dcde906dce426c2d"
-TOKEN = "5258584227:AAHVgoO8bJj4QilPN8J7EWwp9Po83bEaDjM"
+TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
 
 users = Client("ZPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
@@ -51,7 +51,7 @@ JUST SEND YOUR SESSION TO START YOUR BOT 😄.
 Get `APP_ID` from https://my.telegram.org or @UseTGzKBot."""
 HASH_TEXT = "Now send your `API_HASH`.\n\nGet `API_HASH` from https://my.telegram.org Or @UseTGzKBot.\n\nPress /cancel to Cancel Task."
 PHONE_NUMBER_TEXT = (
-    "Now send your PyroGram String Session"
+    "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send your PyroGram String Session"
 )
 HASH = "4e984ea35f854762dcde906dce426c2d"
 API_ID = 6435225
@@ -69,7 +69,7 @@ async def genStr(bot: users, msg: Message):
             break
     try:
         Zaid = await bot.send_message(chat.id, f"Booting Your Client")
-        client = Client(session_name= phone, api_id=API_ID, api_hash=HASH, plugins=dict(root="handlers"))
+        client = Client(":memory:", API_ID, API_HASH, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
         await bot.send_message(chat.id, f"Your Client Has Been Successfully Started! ✅")
