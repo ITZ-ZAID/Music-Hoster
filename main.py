@@ -71,7 +71,7 @@ async def genStr(bot: users, msg: Message):
 users.run()
 bot.start()
 call_py.start()
-await idle()
+idle()
 bot.stop()
 
 
