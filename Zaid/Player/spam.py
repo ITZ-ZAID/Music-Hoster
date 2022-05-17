@@ -5,7 +5,7 @@ import asyncio
 import asyncio
 from config import SUDO_USERS
 from pyrogram import filters
-from Zaid.main import bot as Client
+from pyrogram import Client
 from Zaid.decorators import authorized_users_only, sudo_users_only, errors
 
 @Client.on_message(filters.command('delspam'))
