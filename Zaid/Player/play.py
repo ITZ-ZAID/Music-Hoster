@@ -19,7 +19,7 @@ from Zaid.filters import command, other_filters
 from Zaid.queues import QUEUE, add_to_queue
 from Zaid.main import call_py, Test as user
 from Zaid.utils import bash
-from Zaid.main import bot as Client
+from pyrogram import *
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
@@ -181,14 +181,14 @@ async def play(c: Client, m: Message):
             await m.reply_text(
                 f"@{ASSISTANT_NAME} **is banned in group** {m.chat.title}\n\n» **unban the userbot first if you want to use this bot.**"
             )
-            return
+            pass
     except UserNotParticipant:
         if m.chat.username:
             try:
                 await user.join_chat(m.chat.username)
             except Exception as e:
-                await m.reply_text(f"❌ **userbot failed to join**\n\n**reason**: `{e}`")
-                return
+                await m.reply_text(f"❌ **userbot failed to join**\n\n**reason**: `{e}`\n Try To Join Vc")
+                pass
         else:
             try:
                 invitelink = await c.export_chat_invite_link(
