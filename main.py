@@ -72,11 +72,11 @@ async def genStr(bot: users, msg: Message):
 async def start_bot():
     print("[INFO]: STARTING BOT CLIENT")
     await bot.start()
+    print("[INFO]: STOPPING BOT & USERBOT")
+    await users.start()
     print("[INFO]: STARTING PYTGCALLSS CLIENT")
     await call_py.start()
     await idle()
-    print("[INFO]: STOPPING BOT & USERBOT")
-    await users.start()
     print("[INFO]: Starting Cloner")
     await bot.stop()
 
