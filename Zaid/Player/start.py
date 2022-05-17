@@ -14,16 +14,7 @@ HELP_TEXT = """
 \u2022 Done Setup Process Read Commands Below 👇.
 """
 
-ADMIN_TEXT = """
-🏷️ **Admins Commands** :
 
-\u2022 /userbotjoin To Invite Assistant To Your Chat.
-\u2022 /end To End Streaming.
-\u2022 /pause To Pause Stream.
-\u2022 /resume To Resume Stream.
-\u2022 /volume To Set Volume.
-\u2022 /skip To Skip Tracks.
-"""
 
 USER_TEXT = """
 🏷️ **Users Commands** :
@@ -49,6 +40,17 @@ RAID_TEXT = """
 \u2022 /raidpause - To Pause Raid.
 \u2022 /raidresume To Resume Raid.
 \u2022 /raidend <chatid> To End Audio/Video Raid.
+"""
+
+ADMIN = """
+🏷️ **admin Commands** :
+
+\u2022 /userbotjoin To Invite Assistant To Your Chat.
+\u2022 /end To End Streaming.
+\u2022 /pause To Pause Stream.
+\u2022 /resume To Resume Stream.
+\u2022 /volume To Set Volume.
+\u2022 /skip To Skip Tracks.
 """
 
 @Client.on_callback_query()
