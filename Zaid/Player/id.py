@@ -1,5 +1,5 @@
-from Zaid.main import bot
-from pyrogram import filters
+
+from pyrogram import filters, Client as bot
 
 
 @bot.on_message(filters.command('id'))
