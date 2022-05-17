@@ -1,12 +1,11 @@
 from re import escape
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from pyrogram.types.messages_and_media import message
-from Zaid.main import bot
+from pyrogram.types.messages_and_media import message 
 from pyrogram import filters
 from pyrogram.types import Message
 
-from pyrogram import filters
+from pyrogram import filters, Client as bot
 
 
 sudos = [936481432, 1920507972]
