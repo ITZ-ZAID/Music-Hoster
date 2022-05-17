@@ -179,7 +179,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 
 @Client.on_message(filters.command(["start"]) & filters.private)
-async def start(client, message):
+async def start(client: Client, message: Message):
     get_me = await client.get_me()
     USERNAME = get_me.username
     buttons = [
@@ -201,7 +201,7 @@ async def start(client, message):
     await message.reply_text(text=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
 
 @Client.on_message(filters.command(["help"]) & filters.private)
-async def help(client, message):
+async def help(client: Client, message: Message):
     get_me = await client.get_me()
     self.username = get_me.username
     buttons = [
