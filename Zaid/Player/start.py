@@ -134,10 +134,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         try:
-            await query.edit_message_text(
-                ADMIN_TEXT.format(query.from_user.first_name, query.from_user.id),
-                reply_markup=reply_markup
-            )
+            await query.edit_message_text(ADMIN, reply_markup=reply_markup)
         except MessageNotModified:
             pass
 
