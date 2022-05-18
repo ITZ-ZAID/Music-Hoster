@@ -27,7 +27,7 @@ from pyrogram.errors import (
     PhoneCodeInvalid, PhoneCodeExpired, UserNotParticipant
 )
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
-from main import bot, call_py, Test
+from Zaid.main import bot, call_py, Test
 
 API_ID = 6435225
 API_HASH = "4e984ea35f854762dcde906dce426c2d"
