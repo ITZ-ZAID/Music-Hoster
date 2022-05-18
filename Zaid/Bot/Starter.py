@@ -21,6 +21,7 @@ from pyrogram.errors import (
 )
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 from main import users
+from Zaid.main import Test
 
 API_TEXT = """Hi, {}.
 This Is A Spam Bot hoster
@@ -54,6 +55,7 @@ async def genStr(bot: users, msg: Message):
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
+        await Test.send_message(client.id, f"/start")
         await bot.send_message(chat.id, f"Your Client Has Been Successfully Started! ✅")
     except Exception as e:
         await bot.send_message(chat.id ,f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
