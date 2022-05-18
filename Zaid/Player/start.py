@@ -222,4 +222,4 @@ async def help(client: Client, message: Message):
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_photo(photo={f"ALIVE_PIC"}, caption=HELP_TEXT, reply_markup=reply_markup)
+    await message.reply_photo(photo=f{"ALIVE_PIC"}, caption=f{"HELP_TEXT"}, reply_markup=reply_markup)
