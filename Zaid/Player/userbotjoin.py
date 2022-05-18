@@ -9,39 +9,24 @@ from pyrogram.errors import UserAlreadyParticipant
 
 
 @Client.on_message(
-    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
-)
+    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & other_filters
+
 @authorized_users_only
-@errors
-async def join_group(client, message):
-    chid = message.chat.id
+async def join_chat(c: Client, m: Message):
+    chat_id = m.chat.id
     try:
-        invitelink = await client.export_chat_invite_link(chid)
-    except BaseException:
-        await message.reply_text(
-            "• **i'm not have permission:**\n\n» ❌ __Add Users__",
-        )
-        return
-
-    try:
-        user = await USER.get_me()
-    except BaseException:
-        user.first_name = "music assistant"
-
-    try:
+        invitelink = (await c.get_chat(chat_id)).invite_link
+        if not invitelink:
+            await c.export_chat_invite_link(chat_id)
+            invitelink = (await c.get_chat(chat_id)).invite_link
+        if invitelink.startswith("https://t.me/+"):
+            invitelink = invitelink.replace(
+                "https://t.me/+", "https://t.me/joinchat/"
+            )
         await USER.join_chat(invitelink)
+        return await c.send_message(chat_id, "✅ userbot joined this chat")
     except UserAlreadyParticipant:
-        pass
-    except Exception as e:
-        print(e)
-        await message.reply_text(
-            f"🛑 Flood Wait Error 🛑 \n\n**userbot couldn't join your group due to heavy join requests for userbot**"
-            "\n\n**or add assistant manually to your Group and try again**",
-        )
-        return
-    await message.reply_text(
-        f"✅ **userbot succesfully entered chat**",
-    )
+        return await c.send_message(chat_id, "✅ userbot already in this chat")
 
 
 @Client.on_message(command(["userbotleave",
