@@ -1,6 +1,6 @@
 import asyncio
 from pytgcalls import idle
-from Zaid.main import call_py, bot, users
+from Zaid.main import call_py, bot
 
 
 import asyncio
