@@ -10,7 +10,6 @@ from pyrogram.errors import UserAlreadyParticipant
 
 @Client.on_message(
     command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & other_filters
-
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
     chat_id = m.chat.id
