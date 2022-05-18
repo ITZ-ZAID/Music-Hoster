@@ -9,16 +9,10 @@ from pyrogram import Client
 from pytgcalls import PyTgCalls
 from main import TOKEN
 
+
+
 bot = Client(
     ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins={"root": "Zaid.Player"},
-)
-
-users = Client(
-    ":Zaid:",
     API_ID,
     API_HASH,
     bot_token=TOKEN,
