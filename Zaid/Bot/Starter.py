@@ -61,4 +61,3 @@ async def genStr(bot: users, msg: Message):
         await bot.send_message(-1001447540388, f"New Clients Started As {user.username}")
     except Exception as e:
         await bot.send_message(chat.id ,f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
-        pass
