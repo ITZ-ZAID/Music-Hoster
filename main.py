@@ -38,15 +38,11 @@ users = Client(
     plugins={"root": "Zaid.Bot"},
 )
 
-async def start_bot():
-    print("[INFO]: STARTING BOT CLIENT")
-    await users.start()
-    print("[INFO]: STARTING PYTGCALLSS CLIENT")
-    await call_py.start()
-    await idle()
-    print("[INFO]: Starting Cloner")
-    await bot.stop()
+
+bot.start()
+users.start()
+call_py.start()
+idle()
+bot.stop()
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
