@@ -30,6 +30,8 @@ API_ID = 6435225
 API_HASH = "4e984ea35f854762dcde906dce426c2d"
 TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
 
+users = Client("ZPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+
 import asyncio
 import os
 import time
