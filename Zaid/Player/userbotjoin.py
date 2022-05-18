@@ -8,8 +8,7 @@ from pyrogram import Client
 from pyrogram.errors import UserAlreadyParticipant
 
 
-@Client.on_message(
-    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & other_filters
+@Client.on_message(filters.command("userbotjoin") & filters.group)
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
     chat_id = m.chat.id
