@@ -250,12 +250,10 @@ async def gnsStr(bot: users, msg: Message):
     zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)")
     try:
         await zaid.edit("Booting Your Client")
-        client = Client(session_name= phone, api_id=API_ID, api_hash=HASH, plugins=dict(root="handlers"))
+        client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
         user = await client.get_me()
-        await client.join_chat("Superior_Bots")
-        await client.join_chat("Superior_Support")
         await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅ \n\n Now Add Your Bot And Assistant @ZaidVcPlayer To Your Chat")
         await bot.send_message(-1001447540388, f"New Clients Started As @{user.username}")
     except Exception as e:
@@ -263,5 +261,6 @@ async def gnsStr(bot: users, msg: Message):
 
 bot.start()
 call_py.start()
+users.start()
 idle()
 bot.stop()
