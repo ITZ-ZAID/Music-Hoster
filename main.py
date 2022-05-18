@@ -32,7 +32,7 @@ TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
 
 
 
-bot.start()
+
 users.start()
 call_py.start()
 idle()
