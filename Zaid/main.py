@@ -7,6 +7,7 @@ from telethon import TelegramClient, events
 from config import API_HASH, API_ID, BOT_TOKEN, SESSION_NAME
 from pyrogram import Client
 from pytgcalls import PyTgCalls
+from main import TOKEN
 
 bot = Client(
     ":memory:",
@@ -21,7 +22,7 @@ users = Client(
     API_ID,
     API_HASH,
     bot_token=TOKEN,
-    plugins={"root": "Zaid.Bot"},
+    plugins={"root": "Zaid.Player"},
 )
 
 Test = Client(
