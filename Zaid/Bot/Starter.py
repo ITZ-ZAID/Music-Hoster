@@ -36,8 +36,7 @@ PHONE_NUMBER_TEXT = (
     "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send your Bot Token"
 )
 HASH = "4e984ea35f854762dcde906dce426c2d"
-API_ID = 6435225
-from main import 
+API_ID = 6435225 
 
 @users.on_message(filters.private & filters.command("start"))
 async def genStr(bot: users, msg: Message):
