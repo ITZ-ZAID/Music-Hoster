@@ -66,7 +66,7 @@ JUST SEND YOUR SESSION TO START YOUR BOT 😄.
 Get `APP_ID` from https://my.telegram.org or @UseTGzKBot."""
 HASH_TEXT = "Now send your `API_HASH`.\n\nGet `API_HASH` from https://my.telegram.org Or @UseTGzKBot.\n\nPress /cancel to Cancel Task."
 PHONE_NUMBER_TEXT = (
-    "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send your Bot Token"
+    "Hey!\n\n Welcome to Zaid Vc Player Cloner. I can clone your bot into Zaid Music Bot. \n\nNow send /clone Bot Token"
 )
 HASH = "4e984ea35f854762dcde906dce426c2d"
 API_ID = 6435225 
@@ -88,15 +88,19 @@ async def gnsStr(bot: users, msg: Message):
         await client.start()
         idle()
         user = await client.get_me()
-        await msg.reply(f"Your Client Has Been Successfully Started! ✅")
-        await bot.send_message(-1001447540388, f"New Clients Started As {user.username}")
+        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅")
+        await bot.send_message(-1001447540388, f"New Clients Started As @{user.username}")
+        okie = await Test.get_chat(user.id)
+        await Test.send_message(okie, "/start")
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 
 
 bot.start()
+bot.get_me()
 users.start()
 call_py.start()
+Test.get_me()
 idle()
 bot.stop()
 
