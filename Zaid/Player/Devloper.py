@@ -181,7 +181,6 @@ async def bot_leave_group(_, message):
     try:
         await bot.leave_chat(chat)
         await user.leave_chat(chat)
-        await remove_served_chat(chat)
     except Exception as e:
         await message.reply_text(f"❌ procces failed\n\nreason: `{e}`")
         return
