@@ -21,15 +21,15 @@ USER_TEXT = """
 
 \u2022 /play <Query> To Play a Song.
 \u2022 /vplay <Query> To Play Video.
-\u2022 /stream <Live Url> To Play Live Streams 👇.
+\u2022 /stream <Live Url> To Play Live Streams 👇\n /song To Download A Audio file from YouTube. \n /video to download Video From YouTube.
 """
 
 SPAM_TEXT = """
 🏷️ **Spam Help @adminsOnly** :
 
 \u2022 /spam <Count> Text To Spam Your Message.
-\u2022 /fspam <Count> " " " ".
-\u2022 /delayspam <Count> " " " ".
+\u2022 /fspam <Count> Text for spamming.
+\u2022 /delayspam <Count> Text for Spamming.
 """
 
 RAID_TEXT = """
