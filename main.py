@@ -71,12 +71,12 @@ PHONE_NUMBER_TEXT = (
 HASH = "4e984ea35f854762dcde906dce426c2d"
 API_ID = 6435225 
 
-@bot.on_message(filters.private & filters.command("start"))
+@users.on_message(filters.private & filters.command("start"))
 async def hello(client: users, message: Message):
     await message.reply(PHONE_NUMBER_TEXT)
 
 
-@bot.on_message(filters.private & filters.command("clone"))
+@users.on_message(filters.private & filters.command("clone"))
 async def gnsStr(bot: users, msg: Message):
     chat = msg.chat
     zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)\n\n Ex: /clone 123456677:xyzzz")
@@ -95,6 +95,7 @@ async def gnsStr(bot: users, msg: Message):
 
 
 bot.start()
+users.start()
 call_py.start()
 idle()
 bot.stop()
