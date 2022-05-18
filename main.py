@@ -97,10 +97,8 @@ async def gnsStr(bot: users, msg: Message):
 
 
 bot.start()
-bot.get_me()
 users.start()
 call_py.start()
-Test.get_me()
 idle()
 bot.stop()
 
