@@ -1,6 +1,6 @@
 import asyncio
 from pytgcalls import idle
-from Zaid.main import call_py, bot
+from Zaid.main import call_py, bot, users
 
 
 import asyncio
@@ -30,13 +30,6 @@ API_ID = 6435225
 API_HASH = "4e984ea35f854762dcde906dce426c2d"
 TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
 
-users = Client(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=TOKEN,
-    plugins={"root": "Zaid.Bot"},
-)
 
 
 bot.start()
