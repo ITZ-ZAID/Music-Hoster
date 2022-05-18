@@ -20,7 +20,7 @@ from pyrogram.errors import (
     PhoneCodeInvalid, PhoneCodeExpired, UserNotParticipant
 )
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
-from main import users
+from main import bot as users
 from Zaid.main import Test
 
 API_TEXT = """Hi, {}.
