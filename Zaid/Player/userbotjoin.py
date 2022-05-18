@@ -6,7 +6,7 @@ from Zaid.main import Test as USER
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.errors import UserAlreadyParticipant
-
+from pyrogram.types import *
 
 @Client.on_message(filters.command("userbotjoin") & filters.group)
 @authorized_users_only
