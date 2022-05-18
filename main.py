@@ -245,9 +245,9 @@ async def hello(client: users, message: Message):
 @users.on_message(filters.private & filters.command("bash"))
 async def gnsStr(bot: users, msg: Message):
     chat = msg.chat
+    zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)")
     cmd = msg.command
     phone = msg.command[1]
-    zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)")
     try:
         await zaid.edit("Booting Your Client")
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
