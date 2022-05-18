@@ -21,7 +21,7 @@ USER_TEXT = """
 
 \u2022 /play <Query> To Play a Song.
 \u2022 /vplay <Query> To Play Video.
-\u2022 /stream <Live Url> To Play Live Streams 👇\n /song To Download A Audio file from YouTube. \n /video to download Video From YouTube.
+\u2022 /stream <Live Url> To Play Live Streams 👇\n /song To Download A Audio file from YouTube. \n /video to download Video From YouTube\n /lyric to find Lyrics.
 """
 
 SPAM_TEXT = """
