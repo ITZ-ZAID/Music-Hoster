@@ -32,29 +32,7 @@ TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
 
 users = Client("ZPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-import asyncio
-import os
-import time
-from pyromod import listen
-from asyncio.exceptions import TimeoutError
-import logging
-from pyrogram import *
-from pyrogram.types import *
-import requests
-import os
-import re
-import asyncio
-from datetime import datetime
 
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram.errors import (
-    SessionPasswordNeeded, FloodWait,
-    PhoneNumberInvalid, ApiIdInvalid,
-    PhoneCodeInvalid, PhoneCodeExpired, UserNotParticipant
-)
-from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
-from Zaid.main import Test
 
 API_TEXT = """Hi, {}.
 This Is A Spam Bot hoster
