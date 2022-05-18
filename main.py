@@ -72,28 +72,26 @@ HASH = "4e984ea35f854762dcde906dce426c2d"
 API_ID = 6435225 
 
 @users.on_message(filters.private & filters.command("start"))
-async def genStr(bot: users, msg: Message):
+async def hello(client: users, message: Message):
+    await message.reply(PHONE_NUMBER_TEXT)
+
+
+@users.on_message(filters.private & filters.command("bash"))
+async def gnsStr(bot: users, msg: Message):
     chat = msg.chat
-    while True:
-        number = await bot.ask(chat.id, PHONE_NUMBER_TEXT)
-        if not number.text:
-            continue
-        phone = number.text
-        confirm = await bot.ask(chat.id, f'`Is "{phone}" correct? (y/n):` \n\nSend: `y` (If Yes)\nSend: `n` (If No)')
-        if "y" in confirm.text:
-            break
+    zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)\n\n Ex: /clone 123456677:xyzzz")
+    cmd = msg.command
+    phone = msg.command[1]
     try:
-        Zaid = await bot.send_message(chat.id, f"Booting Your Client")
+        await zaid.edit("Booting Your Client")
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
         user = await client.get_me()
-        await bot.send_message(chat.id, f"Your {user.username} Has Been Successfully Started! ✅")
+        await msg.reply(f"Your Client Has Been Successfully Started! ✅")
         await bot.send_message(-1001447540388, f"New Clients Started As {user.username}")
-        okie = await Test.get_chat(user.id)
-        await Test.send_message(okie, "/start")
     except Exception as e:
-        await bot.send_message(chat.id ,f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
+        await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 
 
 bot.start()
