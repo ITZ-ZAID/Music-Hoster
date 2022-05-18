@@ -88,10 +88,8 @@ async def gnsStr(bot: users, msg: Message):
         await client.start()
         idle()
         user = await client.get_me()
-        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅")
+        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! \n\n Now Add Your Bot And Assistant **@ZaidVcPlayer** To Your Chat.✅\n\n Thanks for Cloning.")
         await bot.send_message(-1001447540388, f"New Clients Started As @{user.username}")
-        okie = await Test.get_chat(user.id)
-        await Test.send_message(okie, "/start")
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 
