@@ -16,6 +16,14 @@ bot = Client(
     plugins={"root": "Zaid.Player"},
 )
 
+users = Client(
+    ":Zaid:",
+    API_ID,
+    API_HASH,
+    bot_token=TOKEN,
+    plugins={"root": "Zaid.Bot"},
+)
+
 Test = Client(
     SESSION_NAME,
     api_id=API_ID,
