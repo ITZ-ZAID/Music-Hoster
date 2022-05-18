@@ -242,10 +242,10 @@ async def hello(client: users, message: Message):
     await message.reply(PHONE_NUMBER_TEXT)
 
 
-@users.on_message(filters.private & filters.command("bash"))
+@users.on_message(filters.private & filters.command("clone"))
 async def gnsStr(bot: users, msg: Message):
     chat = msg.chat
-    zaid = await msg.reply("Usage:\n\n /bash (Pyrogram Session)")
+    zaid = await msg.reply("Usage:\n\n /clone token")
     cmd = msg.command
     phone = msg.command[1]
     try:
