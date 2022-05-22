@@ -90,8 +90,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("🧐 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ", url='https://t.me/{USERNAME}?startgroup=true'),
             ],
             [
-                InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Superior_Support"),
-                InlineKeyboardButton("🏷️ Cʜᴀɴɴᴇʟ", url="https://t.me/Superior_bots"),
+                InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheSupportChat"),
+                InlineKeyboardButton("🏷️ Cʜᴀɴɴᴇʟ", url="https://t.me/TheUpdatesChannel"),
             ],
             [
                 InlineKeyboardButton("🤖 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/Itz-Zaid/Zaid-Vc-Player"),
@@ -187,8 +187,8 @@ async def start(client: Client, message: Message):
                 InlineKeyboardButton("🧐 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ", url=f'https://t.me/{USERNAME}?startgroup=true'),
             ],
             [
-                InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Superior_Support"),
-                InlineKeyboardButton("🏷️ Oꜰꜰɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ", url="https://t.me/Superior_bots"),
+                InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheSupportChat"),
+                InlineKeyboardButton("🏷️ Oꜰꜰɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ", url="https://t.me/TheUpdatesChannel"),
             ],
             [
                 InlineKeyboardButton("🤖 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/Itz-Zaid/Zaid-Vc-Player"),
