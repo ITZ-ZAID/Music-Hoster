@@ -4,8 +4,8 @@ from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import MessageNotModified
 
-ALIVE_PIC = "https://telegra.ph/file/a414e2cdfeaa7d4414b89.png"
-HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 Im **Zaid Vc Player**. \n**I Can Stream Lives, Radios, Raid, Vc Raid, YouTube Videos & Telegram Video Files On Voice Chat Of Telegram Groups**"
+ALIVE_PIC = "https://telegra.ph/file/5499d206b93bbfd4ff8a3.jpg"
+HOME_TEXT = "👋🏻 **Hi Sir [{}](tg://user?id={})** \n\n🤖 **Im Zaid Vc Player**. \n**I Can Stream Lives, Radios, Raid, Vc Raid, YouTube Videos & Telegram Video Files On Voice Chat Of Telegram Groups**"
 HELP_TEXT = """
 🏷️ **Setup Guide** :
 
@@ -188,7 +188,7 @@ async def start(client: Client, message: Message):
             ],
             [
                 InlineKeyboardButton("💌 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheSupportChat"),
-                InlineKeyboardButton("🏷️ Oꜰꜰɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ", url="https://t.me/TheUpdatesChannel"),
+                InlineKeyboardButton("🏷️ Cʜᴀɴɴᴇʟ", url="https://t.me/TheUpdatesChannel"),
             ],
             [
                 InlineKeyboardButton("🤖 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/Itz-Zaid/Zaid-Vc-Player"),
