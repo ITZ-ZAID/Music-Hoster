@@ -9,12 +9,12 @@ import youtube_dl
 import youtube_dl
 import aiofiles
 import aiohttp
-from RaiChu.converter import convert
+from Zaid.converter import convert
 import ffmpeg
 import requests
-from Process.fonts import CHAT_TITLE
+from Zaid.fonts import CHAT_TITLE
 from PIL import Image, ImageDraw, ImageFont
-from Config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5
+from config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5
 from Zaid.filters import command, other_filters
 from Zaid.queues import QUEUE, add_to_queue
 from Zaid.main import call_py, Test as user
