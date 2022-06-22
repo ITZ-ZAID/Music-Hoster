@@ -5,8 +5,7 @@ from asyncio.queues import QueueEmpty
 import os
 import random
 import re
-import youtube_dl
-import youtube_dl
+import yt_dlp
 import aiofiles
 import aiohttp
 from Zaid.converter import convert
@@ -179,7 +178,7 @@ async def play(c: Client, m: Message):
             )
         else:
             suhu = await m.reply_text(
-        f"**𝙕𝙖𝙞𝙙 Downloading**\n\n100% ▓▓▓▓▓▓▓▓▓▓▓▓ 00%"
+        f"**Downloading**\n\n100% ▓▓▓▓▓▓▓▓▓▓▓▓ 00%"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
@@ -221,7 +220,7 @@ async def play(c: Client, m: Message):
                     else:
                         try:
                             await suhu.edit(
-                            f"**𝙉𝙪𝙡𝙡 Downloader**\n\n**Title**: {title[:22]}\n\n0% ████████████100%\n\n**Time Taken**: 00:00 Seconds\n\n**Converting Audio[FFmpeg Process]**"
+                            f"**Downloader**\n\n**Title**: {title[:22]}\n\n0% ████████████100%\n\n**Time Taken**: 00:00 Seconds\n\n**Converting Audio[FFmpeg Process]**"
                         )
                             await call_py.join_group_call(
                                 chat_id,
