@@ -25,7 +25,7 @@ from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from youtubesearchpython import VideosSearch
 from Process.thumbnail import play_thumb, queue_thumb
-from Zaid.inline import stream_markup, audio_markup
+from Zaid.Null import stream_markup, audio_markup
 
 
 def ytsearch(query):
