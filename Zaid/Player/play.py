@@ -18,7 +18,6 @@ from Zaid.filters import command, other_filters
 from Zaid.queues import QUEUE, add_to_queue
 from Zaid.main import call_py, Test as user
 from Zaid.utils import bash
-from Zaid.main import bot as Client
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
@@ -26,6 +25,35 @@ from pytgcalls.types.input_stream import AudioPiped
 from youtubesearchpython import VideosSearch
 from Process.thumbnail import play_thumb, queue_thumb
 from Zaid.Null import stream_markup, audio_markup
+
+import io
+from os import path
+from typing import Callable
+from asyncio.queues import QueueEmpty
+import os
+import random
+import re
+from random import choice
+import aiofiles
+import aiohttp
+from Zaid.converter import convert
+import ffmpeg
+import requests
+from Zaid.fonts import CHAT_TITLE
+from PIL import Image, ImageDraw, ImageFont
+from config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5, UPDATES_CHANNEL, GROUP_SUPPORT
+from Zaid.filters import command, other_filters
+from Zaid.queues import QUEUE, add_to_queue
+from Zaid.main import call_py, Test as user
+from Zaid.utils import bash
+from pyrogram import *
+from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pytgcalls import StreamType
+from pytgcalls.types.input_stream import AudioPiped
+from youtubesearchpython import VideosSearch
+import yt_dlp
+import yt_dlp
 
 
 def ytsearch(query):
@@ -46,7 +74,7 @@ def ytsearch(query):
 async def ytdl(format: str, link: str):
     stdout, stderr = await bash(f'yt-dlp --geo-bypass -g -f "[height<=?720][width<=?1280]" {link}')
     if stdout:
-        return 1, stdout.split("\n")[0]
+        return 1, stdout
     return 0, stderr
 
 chat_id = None
