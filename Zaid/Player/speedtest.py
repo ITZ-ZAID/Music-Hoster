@@ -4,12 +4,12 @@ import speedtest
 
 from PIL import Image
 from pyrogram.types import Message
-from pyrogram import filters, Client as app
+from pyrogram import filters, Client
 
 from config import SUDO_USERS as SUDOERS
 
-@app.on_message(filters.command("speedtest") & ~filters.edited)
-async def run_speedtest(_, message):
+@Client.on_message(filters.command("speedtest") & ~filters.edited)
+async def run_speedtest(app: Client, message):
     userid = message.from_user.id
     m = await message.reply_text("__Processing__...")
     try:
