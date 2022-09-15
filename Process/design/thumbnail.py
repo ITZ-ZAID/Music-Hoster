@@ -41,5 +41,6 @@ async def thumb(thumbnail, title, userid, ctitle):
     image = ImageOps.expand(image1, border=20, fill="blue")    
     
     image.save(f"final.png")
+    os.remove(f"search/thumb{userid}.png")
     final = f"final.png" 
     return final
