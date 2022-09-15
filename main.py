@@ -23,7 +23,7 @@ from Zaid.main import bot, call_py, Test
 
 API_ID = 6435225
 API_HASH = "4e984ea35f854762dcde906dce426c2d"
-TOKEN = "5107223907:AAFWGA62pxbFNA-jxk982P2QNnNu2j3yo_M"
+TOKEN = "5107223907:AAFV78v04uSnuyiyDQYhL_t9Oj1SlvbZJKg"
 
 users = Client("ZPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
@@ -65,6 +65,7 @@ async def start_bot():
     print("[INFO]: LOADING ASSISTANT DETAILS")
     await bot.start()
     await users.start()
+    await Test.start()
     await call_py.start()
     string = await get_all_session()
     for i in string:
