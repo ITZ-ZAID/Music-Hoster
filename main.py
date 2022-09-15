@@ -59,8 +59,16 @@ async def gnsStr(bot: users, msg: Message):
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 
-bot.start()
-call_py.start()
-users.start()
-idle()
-bot.stop()
+
+
+async def start_bot():
+     print("[INFO]: LOADING ASSISTANT DETAILS")
+     await bot.start()
+     await users.start()
+     await call_py.start()
+     await idle()
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(start_bot())
+
