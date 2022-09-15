@@ -26,7 +26,7 @@ from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from youtubesearchpython import VideosSearch
 import yt_dlp
-import yt_dlp
+from PIL import Image, ImageFont, ImageDraw, ImageFilter, ImageOps
 
 ZAID_IMGS = [
     "Process/ImageFont/LightGreen.png",
@@ -108,24 +108,14 @@ async def generate_cover(thumbnail, title, userid, ctitle):
                 f = await aiofiles.open(f"thumb{userid}.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-    image1 = Image.open(f"thumb{userid}.png")
-    images = choice(ZAID_IMGS)
-    image2 = Image.open(images)
-    image3 = changeImageSize(1280, 720, image1)
-    image4 = changeImageSize(1280, 720, image2)
-    image5 = image3.convert("RGBA")
-    image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save(f"temp{userid}.png")
-    img = Image.open(f"temp{userid}.png")
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("Process/ImageFont/finalfont.ttf", 60)
-    font2 = ImageFont.truetype("Process/ImageFont/finalfont.ttf", 70)     
-    draw.text((20, 45), f"{title[:30]}...", fill= "white", stroke_width = 1, stroke_fill="white", font=font2)
-    draw.text((120, 595), f"PlAYING ON: {ctitle[:20]}...", fill="white", stroke_width = 1, stroke_fill="white" ,font=font)
-    img.save(f"final{userid}.png")
-    os.remove(f"temp{userid}.png")
-    os.remove(f"thumb{userid}.png") 
-    final = f"final{userid}.png"
+    image = Image.open(f"thumb{userid}.png")
+    image1 = changeImageSize(1280, 720, image)
+    # Cropping circle from thubnail
+    image = ImageOps.expand(image1, border=20, fill="blue")    
+    
+    image.save(f"final.png")
+    os.remove(f"background.png")
+    final = f"final.png" 
     return final
 
 
