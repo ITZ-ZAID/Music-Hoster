@@ -57,6 +57,8 @@ async def ytdl(link):
 @Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & other_filters)
 async def vplay(c: Client, m: Message):
     await m.delete()
+    m.reply_text("Video Streaming 💡\nCan only Premium groups\n\nContact @Godfatherakki to upgrade your chat")
+        return
     replied = m.reply_to_message
     chat_id = m.chat.id
     user_id = m.from_user.id
