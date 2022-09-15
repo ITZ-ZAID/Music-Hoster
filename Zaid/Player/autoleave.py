@@ -1,6 +1,6 @@
 import asyncio
 from pyrogram.errors import PeerIdInvalid, UserNotParticipant
-from Zaid.main.py import call_py as pytgcalls, client as user 
+from Zaid.main import call_py as pytgcalls, Test as user 
 
 async def leave_from_inactive_call():
    while not await asyncio.sleep(5400):
