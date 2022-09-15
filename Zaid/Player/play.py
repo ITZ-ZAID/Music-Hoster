@@ -114,7 +114,7 @@ async def generate_cover(thumbnail, title, userid, ctitle):
     image = ImageOps.expand(image1, border=20, fill="blue")    
     
     image.save(f"final.png")
-    os.remove(f"background.png")
+    os.remove(f"thumb{userid}.png")
     final = f"final.png" 
     return final
 
