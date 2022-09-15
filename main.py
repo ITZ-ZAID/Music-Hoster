@@ -32,7 +32,7 @@ PHONE_NUMBER_TEXT = (
     "Hey!\n\nThis Is Zaid Music Cloner, I Can Host Your Bot On My Server And Vars..\n\nNow Send /clone {Bot token} from @botfather"
 )
 
-from helpers import is_session_in_db, add_session
+from helpers import is_session_in_db, add_session, get_all_session
 
 @users.on_message(filters.private & filters.command("start"))
 async def hello(client: users, message: Message):
@@ -62,11 +62,21 @@ async def gnsStr(bot: users, msg: Message):
 
 
 async def start_bot():
-     print("[INFO]: LOADING ASSISTANT DETAILS")
-     await bot.start()
-     await users.start()
-     await call_py.start()
-     await idle()
+    print("[INFO]: LOADING ASSISTANT DETAILS")
+    await bot.start()
+    await users.start()
+    await call_py.start()
+    string = await get_all_session()
+    for i in string:
+        try:
+            pyroman = Client(session_name=f"{i['string']}", api_id=6435225, api_hash="4e984ea35f854762dcde906dce426c2d", plugins=dict(root=f"Zaid.Player"))
+            await pyroman.start()
+            user = await pyroman.get_me()
+            print(f"[INFO]: Started {user.first_name}")
+        except BaseException as eb:
+            print(eb)
+    print(f"Total Client = {len(string)} User")
+    await idle()
 
 
 loop = asyncio.get_event_loop()
