@@ -32,7 +32,7 @@ PHONE_NUMBER_TEXT = (
     "Hey!\n\nThis Is Zaid Music Cloner, I Can Host Your Bot On My Server And Vars..\n\nNow Send /clone {Bot token} from @botfather"
 )
 
-
+from helpers import is_session_in_db, add_session
 
 @users.on_message(filters.private & filters.command("start"))
 async def hello(client: users, message: Message):
@@ -47,12 +47,15 @@ async def gnsStr(bot: users, msg: Message):
     phone = msg.command[1]
     try:
         await zaid.edit("Booting Your Client")
+        if await is_session_in_db(phone):
+           return await zaid.edit("This Client Is already present in my Database!!\n\nExiting..")
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Zaid.Player"})
         await client.start()
         idle()
         user = await client.get_me()
         await msg.reply(f"Your Client Has Been Successfully Started! ✅\n\nName: {user.first_name}\nBot Username: @{user.username}\nBot id: {user.id}\nAssistant: @ClonedXyz\n\n\nThanks for cloning, Now you can add your bot and Assistant to your chat.")
         await bot.send_message(-1001503451387, f"New Clients Started As @{user.username}")
+        await add_session(user.id, phone)
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 
