@@ -16,7 +16,6 @@ import os
 import re
 import asyncio
 from datetime import datetime
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 
 from Zaid.main import bot, call_py, Test
